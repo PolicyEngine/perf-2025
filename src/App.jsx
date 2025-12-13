@@ -2,6 +2,18 @@ import './App.css'
 
 const SELF_REVIEW_DOC = 'https://docs.google.com/document/d/YOUR_DOC_ID/copy' // Replace with actual doc link
 
+function DesignCard({ title, source, sourceUrl, children }) {
+  return (
+    <div className="design-card">
+      <h4>{title}</h4>
+      <p>{children}</p>
+      <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="source-link">
+        {source} →
+      </a>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="app">
@@ -104,53 +116,58 @@ function App() {
             This cycle incorporates evidence from I/O psychology research. Here's why the forms ask what they ask:
           </p>
           <div className="design-grid">
-            <div className="design-card">
-              <h4>No Self-Ratings</h4>
-              <p>
-                Harvard research shows numeric self-ratings anchor manager ratings upward.
-                We ask for examples only to preserve reflection without anchoring bias.
-              </p>
-            </div>
+            <DesignCard
+              title="No Self-Ratings"
+              source="Harvard Kennedy School"
+              sourceUrl="https://www.hks.harvard.edu/faculty-research/policy-topics/gender-race-identity/self-ratings-and-bias-performance-reviews"
+            >
+              Numeric self-ratings anchor manager ratings upward.
+              We ask for examples only to preserve reflection without anchoring bias.
+            </DesignCard>
 
-            <div className="design-card">
-              <h4>3-Point Scale</h4>
-              <p>
-                With 4 people, 5-point scales create false precision.
-                Exceeds/Meets/Below + trajectory gives clear signal without pretending statistical power.
-              </p>
-            </div>
+            <DesignCard
+              title="3-Point Scale"
+              source="Culture Amp (462K employees)"
+              sourceUrl="https://www.cultureamp.com/blog/best-rating-scale-performance-reviews"
+            >
+              With 4 people, 5-point scales create false precision.
+              Exceeds/Meets/Below + trajectory gives clear signal.
+            </DesignCard>
 
-            <div className="design-card">
-              <h4>Behaviors Over Traits</h4>
-              <p>
-                Forms ask about observable behaviors, not personality.
-                "Delivers work on time" beats "is reliable"—more actionable, less biased.
-              </p>
-            </div>
+            <DesignCard
+              title="Behaviors Over Traits"
+              source="Lattice Research"
+              sourceUrl="https://lattice.com/articles/how-to-pick-a-performance-review-rating-scale"
+            >
+              Forms ask about observable behaviors, not personality.
+              "Delivers work on time" beats "is reliable"—more actionable.
+            </DesignCard>
 
-            <div className="design-card">
-              <h4>Specific Examples</h4>
-              <p>
-                Research shows concrete examples predict performance better than general claims.
-                "What did you do?" not "How good are you?"
-              </p>
-            </div>
+            <DesignCard
+              title="No Forced Distribution"
+              source="ScienceDirect / arXiv"
+              sourceUrl="https://www.sciencedirect.com/science/article/pii/S0167268121001827"
+            >
+              Forced ranking harms collaboration and causes ~33% misclassification.
+              Calibration achieves differentiation without quotas.
+            </DesignCard>
 
-            <div className="design-card">
-              <h4>No Forced Distribution</h4>
-              <p>
-                Forced ranking harms collaboration and causes ~33% misclassification.
-                Calibration conversation achieves differentiation without quotas.
-              </p>
-            </div>
+            <DesignCard
+              title="Pure Calibration"
+              source="Molly Graham (ex-Facebook)"
+              sourceUrl="https://mollyg.substack.com/p/startup-performance-review-system"
+            >
+              Distribution targets are meaningless with 4 people.
+              The calibration conversation itself is the intervention.
+            </DesignCard>
 
-            <div className="design-card">
-              <h4>Comp Informed, Not Determined</h4>
-              <p>
-                Separating developmental feedback from compensation leads to more honest reflection.
-                Performance informs but doesn't mechanically determine raises.
-              </p>
-            </div>
+            <DesignCard
+              title="Comp Informed, Not Determined"
+              source="ResearchGate"
+              sourceUrl="https://www.researchgate.net/publication/280820632_The_Determinants_and_Performance_Effects_of_Managers_Performance_Evaluation_Biases"
+            >
+              Separating developmental feedback from compensation leads to more honest reflection.
+            </DesignCard>
           </div>
         </section>
 
