@@ -1,6 +1,6 @@
 import './App.css'
 
-const SELF_REVIEW_DOC = 'https://docs.google.com/document/d/YOUR_DOC_ID/copy' // Replace with actual doc link
+const SELF_REVIEW_DOC = 'https://docs.google.com/document/d/1augs-A5yJ-Jl91cq_KFbUhFEdML9_JgplyfE5ReWsTM/copy'
 
 function DesignCard({ title, source, sourceUrl, children }) {
   return (
