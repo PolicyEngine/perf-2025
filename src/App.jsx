@@ -113,7 +113,7 @@ function App() {
         <section className="section" id="design">
           <h2>🔬 Design Decisions</h2>
           <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '1.5rem' }}>
-            This cycle incorporates evidence from I/O psychology research. Here's why the forms ask what they ask:
+            This cycle incorporates evidence from I/O psychology research and lessons from Google's performance system.
           </p>
           <div className="design-grid">
             <DesignCard
@@ -122,30 +122,39 @@ function App() {
               sourceUrl="https://www.hks.harvard.edu/faculty-research/policy-topics/gender-race-identity/self-ratings-and-bias-performance-reviews"
             >
               Numeric self-ratings anchor manager ratings upward.
-              We ask for examples only to preserve reflection without anchoring bias.
+              We ask for examples only—reflection without anchoring bias.
             </DesignCard>
 
             <DesignCard
-              title="3-Point Scale"
-              source="Culture Amp (462K employees)"
-              sourceUrl="https://www.cultureamp.com/blog/best-rating-scale-performance-reviews"
+              title="Examples Over Checklists"
+              source="I/O Psychology Research"
+              sourceUrl="https://www.annualreviews.org/doi/abs/10.1146/annurev-orgpsych-031413-091305"
             >
-              With 4 people, 5-point scales create false precision.
-              Exceeds/Meets/Below + trajectory gives clear signal.
+              Specific examples predict performance better than trait checklists.
+              No behavioral tables—just "what did you do and what happened?"
             </DesignCard>
 
             <DesignCard
-              title="Behaviors Over Traits"
-              source="Lattice Research"
-              sourceUrl="https://lattice.com/articles/how-to-pick-a-performance-review-rating-scale"
+              title="Keep/Develop Framing"
+              source="Google Perf (Laszlo Bock)"
+              sourceUrl="https://www.workrules.net/"
             >
-              Forms ask about observable behaviors, not personality.
-              "Delivers work on time" beats "is reliable"—more actionable.
+              Simple reflection beats formal goal-setting matrices.
+              "What will you keep doing? What will you develop?"
+            </DesignCard>
+
+            <DesignCard
+              title="Comp Fully Separated"
+              source="ResearchGate"
+              sourceUrl="https://www.researchgate.net/publication/280820632_The_Determinants_and_Performance_Effects_of_Managers_Performance_Evaluation_Biases"
+            >
+              Mixing comp with developmental feedback makes people defensive.
+              No comp questions in self-review—that's a separate conversation.
             </DesignCard>
 
             <DesignCard
               title="No Forced Distribution"
-              source="ScienceDirect / arXiv"
+              source="ScienceDirect"
               sourceUrl="https://www.sciencedirect.com/science/article/pii/S0167268121001827"
             >
               Forced ranking harms collaboration and causes ~33% misclassification.
@@ -153,20 +162,12 @@ function App() {
             </DesignCard>
 
             <DesignCard
-              title="Pure Calibration"
+              title="Minimal Process"
               source="Molly Graham (ex-Facebook)"
               sourceUrl="https://mollyg.substack.com/p/startup-performance-review-system"
             >
-              Distribution targets are meaningless with 4 people.
-              The calibration conversation itself is the intervention.
-            </DesignCard>
-
-            <DesignCard
-              title="Comp Informed, Not Determined"
-              source="ResearchGate"
-              sourceUrl="https://www.researchgate.net/publication/280820632_The_Determinants_and_Performance_Effects_of_Managers_Performance_Evaluation_Biases"
-            >
-              Separating developmental feedback from compensation leads to more honest reflection.
+              At 4 people, heavy process adds overhead without value.
+              Form takes ~15 minutes. The conversation is what matters.
             </DesignCard>
           </div>
         </section>
