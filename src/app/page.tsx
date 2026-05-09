@@ -1,20 +1,31 @@
-import './App.css'
+const SELF_REVIEW_DOC =
+  'https://docs.google.com/document/d/1augs-A5yJ-Jl91cq_KFbUhFEdML9_JgplyfE5ReWsTM/copy';
 
-const SELF_REVIEW_DOC = 'https://docs.google.com/document/d/1augs-A5yJ-Jl91cq_KFbUhFEdML9_JgplyfE5ReWsTM/copy'
+interface DesignCardProps {
+  title: string;
+  source: string;
+  sourceUrl: string;
+  children: React.ReactNode;
+}
 
-function DesignCard({ title, source, sourceUrl, children }) {
+function DesignCard({ title, source, sourceUrl, children }: DesignCardProps) {
   return (
     <div className="design-card">
       <h4>{title}</h4>
       <p>{children}</p>
-      <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="source-link">
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="source-link"
+      >
         {source} →
       </a>
     </div>
-  )
+  );
 }
 
-function App() {
+export default function HomePage() {
   return (
     <div className="app">
       <div className="bg" />
@@ -23,21 +34,35 @@ function App() {
           <div className="badge">December 2025</div>
           <h1>Performance Review</h1>
           <p className="subtitle">
-            PolicyEngine's annual review cycle. Self-reviews due Friday, Dec 19.
+            PolicyEngine&apos;s annual review cycle. Self-reviews due Friday, Dec
+            19.
           </p>
         </header>
 
         <div className="actions">
-          <a href={SELF_REVIEW_DOC} target="_blank" rel="noopener" className="action-card">
+          <a
+            href={SELF_REVIEW_DOC}
+            target="_blank"
+            rel="noopener"
+            className="action-card"
+          >
             <div className="action-icon">📝</div>
             <h3>Self-Review Form</h3>
-            <p>Copy the template to your Google Docs and complete your self-assessment.</p>
+            <p>
+              Copy the template to your Google Docs and complete your
+              self-assessment.
+            </p>
             <span className="action-link">
               Copy to Google Docs <span>→</span>
             </span>
           </a>
 
-          <a href="https://policyengine.github.io/github-wrapped/" target="_blank" rel="noopener" className="action-card">
+          <a
+            href="https://policyengine.github.io/github-wrapped/"
+            target="_blank"
+            rel="noopener"
+            className="action-card"
+          >
             <div className="action-icon">📊</div>
             <h3>GitHub Wrapped</h3>
             <p>Review your 2025 GitHub activity across PolicyEngine repos.</p>
@@ -49,7 +74,9 @@ function App() {
           <a href="#design" className="action-card">
             <div className="action-icon">🔬</div>
             <h3>Design Rationale</h3>
-            <p>Why the forms ask what they ask—research-backed design decisions.</p>
+            <p>
+              Why the forms ask what they ask—research-backed design decisions.
+            </p>
             <span className="action-link">
               Learn more <span>↓</span>
             </span>
@@ -68,7 +95,9 @@ function App() {
               <ul>
                 <li>Dec 12: Kickoff email sent</li>
                 <li>Dec 17: Reminder for outstanding submissions</li>
-                <li>Dec 19: <strong>Self-reviews due</strong></li>
+                <li>
+                  Dec 19: <strong>Self-reviews due</strong>
+                </li>
               </ul>
             </div>
 
@@ -105,7 +134,7 @@ function App() {
                 Feedback Collection
                 <span className="phase-dates">Jan 13–17</span>
               </h3>
-              <p>Post-cycle survey to improve next year's process.</p>
+              <p>Post-cycle survey to improve next year&apos;s process.</p>
             </div>
           </div>
         </section>
@@ -113,7 +142,8 @@ function App() {
         <section className="section" id="design">
           <h2>🔬 Design Decisions</h2>
           <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '1.5rem' }}>
-            This cycle incorporates evidence from I/O psychology research and lessons from Google's performance system.
+            This cycle incorporates evidence from I/O psychology research and
+            lessons from Google&apos;s performance system.
           </p>
           <div className="design-grid">
             <DesignCard
@@ -121,8 +151,8 @@ function App() {
               source="Harvard Kennedy School"
               sourceUrl="https://www.hks.harvard.edu/faculty-research/policy-topics/gender-race-identity/self-ratings-and-bias-performance-reviews"
             >
-              Numeric self-ratings anchor manager ratings upward.
-              We ask for examples only—reflection without anchoring bias.
+              Numeric self-ratings anchor manager ratings upward. We ask for
+              examples only—reflection without anchoring bias.
             </DesignCard>
 
             <DesignCard
@@ -131,7 +161,8 @@ function App() {
               sourceUrl="https://www.annualreviews.org/doi/abs/10.1146/annurev-orgpsych-031413-091305"
             >
               Specific examples predict performance better than trait checklists.
-              No behavioral tables—just "what did you do and what happened?"
+              No behavioral tables—just &quot;what did you do and what
+              happened?&quot;
             </DesignCard>
 
             <DesignCard
@@ -139,8 +170,8 @@ function App() {
               source="Google Perf (Laszlo Bock)"
               sourceUrl="https://www.workrules.net/"
             >
-              Simple reflection beats formal goal-setting matrices.
-              "What will you keep doing? What will you develop?"
+              Simple reflection beats formal goal-setting matrices. &quot;What
+              will you keep doing? What will you develop?&quot;
             </DesignCard>
 
             <DesignCard
@@ -148,8 +179,8 @@ function App() {
               source="ResearchGate"
               sourceUrl="https://www.researchgate.net/publication/280820632_The_Determinants_and_Performance_Effects_of_Managers_Performance_Evaluation_Biases"
             >
-              Mixing comp with developmental feedback makes people defensive.
-              No comp questions in self-review—that's a separate conversation.
+              Mixing comp with developmental feedback makes people defensive. No
+              comp questions in self-review—that&apos;s a separate conversation.
             </DesignCard>
 
             <DesignCard
@@ -166,20 +197,19 @@ function App() {
               source="Molly Graham (ex-Facebook)"
               sourceUrl="https://mollyg.substack.com/p/startup-performance-review-system"
             >
-              At 4 people, heavy process adds overhead without value.
-              Form takes ~15 minutes. The conversation is what matters.
+              At 4 people, heavy process adds overhead without value. Form takes
+              ~15 minutes. The conversation is what matters.
             </DesignCard>
           </div>
         </section>
 
         <footer className="footer">
           <p>
-            PolicyEngine · <a href="https://policyengine.org">policyengine.org</a>
+            PolicyEngine ·{' '}
+            <a href="https://policyengine.org">policyengine.org</a>
           </p>
         </footer>
       </div>
     </div>
-  )
+  );
 }
-
-export default App
